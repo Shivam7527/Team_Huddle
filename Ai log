@@ -1,0 +1,821 @@
+AI Log Explorer - Enterprise API Transaction Monitoring System
+
+Project Overview
+
+Build a modern enterprise web application named AI Log Explorer.
+
+The application will allow business users, testers, support engineers, and developers to search API transaction logs using natural language instead of SQL queries.
+
+All API transaction logs are stored in a SQL Server database in a single transaction table.
+
+The AI assistant should understand English questions, convert them into optimized SQL queries, execute them safely, and present the results in an attractive dashboard.
+
+The application should feel like a combination of:
+
+* ChatGPT
+* Kibana
+* Azure Portal
+* Splunk
+* Datadog
+
+Use a clean enterprise UI.
+
+⸻
+
+Tech Stack
+
+Frontend
+
+* React 19
+* TypeScript
+* Material UI
+* Tailwind CSS
+* React Router
+* TanStack Table
+* Recharts
+* Framer Motion
+
+Backend
+
+* Spring Boot Java 21
+* Maven
+* REST APIs
+* JPA
+* SQL Server
+
+AI Service
+
+* Python FastAPI
+* LangChain
+* Azure OpenAI (or OpenAI GPT)
+* SQL Generation
+* Response Summarization
+
+Database
+
+SQL Server
+
+Authentication
+
+JWT Login
+
+Role Based Access
+
+Roles
+
+* Admin
+* Business User
+* QA
+* Support
+
+⸻
+
+Database Table
+
+Assume transaction table contains fields like
+
+API_TRAN_KEY_ID
+
+API_TRAN_DT
+
+API_CD
+
+CNSM_CD
+
+CNSM_USR_NM
+
+REQ_STRT_TS
+
+REQ_END_TS
+
+REQ_API_STTS_CD
+
+RSPN_CD
+
+REQUEST_JSON
+
+RESPONSE_JSON
+
+ERROR_MESSAGE
+
+CORRELATION_ID
+
+TRACE_ID
+
+HOST_NAME
+
+LATENCY_MS
+
+HTTP_METHOD
+
+ENDPOINT
+
+CLIENT_IP
+
+⸻
+
+Main Dashboard
+
+Create a premium dashboard.
+
+Top Navigation
+
+Logo
+
+AI Log Explorer
+
+Search icon
+
+Notification
+
+Profile
+
+Dark Mode Toggle
+
+User Avatar
+
+⸻
+
+Left Sidebar
+
+Dashboard
+
+AI Search
+
+Transactions
+
+Consumers
+
+APIs
+
+Analytics
+
+Alerts
+
+Saved Queries
+
+Reports
+
+Settings
+
+⸻
+
+Dashboard Cards
+
+Total Transactions
+
+Successful Requests
+
+Failed Requests
+
+Processing Requests
+
+Average Response Time
+
+Top Consumer
+
+Top API
+
+Database Status
+
+AI Health
+
+⸻
+
+Charts
+
+Daily Requests
+
+Hourly Traffic
+
+Success vs Failure
+
+API Wise Requests
+
+Consumer Wise Requests
+
+Top Slow APIs
+
+Average Response Time
+
+Heat Map
+
+⸻
+
+AI Search Page
+
+Large AI search box like ChatGPT.
+
+Placeholder
+
+Ask anything about your API transactions…
+
+Example prompts
+
+Show failed PLAN requests today
+
+Show requests for Consumer1
+
+Show transactions by RIC_2.0
+
+Which APIs failed yesterday?
+
+Show requests taking more than 5 seconds
+
+Show timeout errors
+
+Show 500 responses
+
+Which consumer generated highest traffic?
+
+Show processing requests
+
+Generate daily summary
+
+Export failed transactions
+
+Voice Search Button
+
+Send Button
+
+Clear Button
+
+⸻
+
+AI Response
+
+AI should display
+
+Generated SQL
+
+Natural language explanation
+
+Summary
+
+Statistics
+
+Result table
+
+Charts
+
+Suggestions
+
+Example
+
+You searched
+
+Show PLAN requests for Consumer1 today
+
+AI returns
+
+234 Requests
+
+230 Completed
+
+4 Failed
+
+Average Response Time
+
+1.4 seconds
+
+Generated SQL
+
+Table
+
+Charts
+
+Download Excel
+
+⸻
+
+Transaction Table
+
+Columns
+
+Transaction ID
+
+Date
+
+API Code
+
+Consumer
+
+Consumer Username
+
+Status
+
+Response Code
+
+Start Time
+
+End Time
+
+Execution Time
+
+Request Size
+
+Response Size
+
+Correlation ID
+
+Actions
+
+Sorting
+
+Filtering
+
+Pagination
+
+Search
+
+Export
+
+Resizable columns
+
+Sticky header
+
+Column chooser
+
+⸻
+
+Transaction Details Drawer
+
+Click any row.
+
+Right side drawer opens.
+
+Tabs
+
+Overview
+
+Request
+
+Response
+
+Headers
+
+Timeline
+
+Raw JSON
+
+Logs
+
+Overview
+
+Transaction ID
+
+Consumer
+
+API
+
+Status
+
+Execution Time
+
+Machine
+
+Server
+
+Environment
+
+Request Time
+
+Response Time
+
+⸻
+
+Request Tab
+
+Pretty JSON Viewer
+
+Copy Button
+
+Download JSON
+
+⸻
+
+Response Tab
+
+Pretty JSON Viewer
+
+Syntax Highlight
+
+Expand Collapse
+
+Copy
+
+Download
+
+⸻
+
+Timeline
+
+Request Received
+
+Validation
+
+Business Logic
+
+Database
+
+Response Sent
+
+Each step should show duration.
+
+⸻
+
+Analytics Page
+
+Charts
+
+Top Consumers
+
+Top APIs
+
+Average Response
+
+Traffic
+
+Error Rate
+
+Daily Requests
+
+Monthly Requests
+
+Slow APIs
+
+Pie Charts
+
+Line Charts
+
+Bar Charts
+
+Heat Maps
+
+Interactive filters
+
+⸻
+
+Consumers Page
+
+List
+
+Consumer Name
+
+Total Requests
+
+Failures
+
+Average Response
+
+Top APIs
+
+Status
+
+Click opens consumer profile.
+
+⸻
+
+Consumer Profile
+
+Statistics
+
+Last Transactions
+
+Usage Trend
+
+Response Time
+
+Top Errors
+
+Charts
+
+⸻
+
+API Page
+
+List all APIs
+
+PLAN
+
+CRTQT
+
+REQR
+
+QUOTE
+
+CLAIM
+
+etc.
+
+Click API
+
+Show
+
+Traffic
+
+Latency
+
+Errors
+
+Consumers
+
+Charts
+
+⸻
+
+Alerts
+
+Failed Requests
+
+Timeouts
+
+5xx Errors
+
+Processing Stuck
+
+Database Down
+
+Slow APIs
+
+AI generated alerts
+
+⸻
+
+Reports
+
+Generate PDF
+
+Excel
+
+CSV
+
+Scheduled Reports
+
+Daily
+
+Weekly
+
+Monthly
+
+Email Reports
+
+⸻
+
+Saved Queries
+
+Business users can save
+
+Show PLAN failures
+
+Today’s requests
+
+Timeout APIs
+
+Top Consumers
+
+etc.
+
+⸻
+
+Settings
+
+Database Connection
+
+AI Configuration
+
+Prompt Templates
+
+Theme
+
+Notifications
+
+Roles
+
+Permissions
+
+Audit Logs
+
+⸻
+
+AI Features
+
+Natural Language to SQL
+
+SQL Validation
+
+Prevent DELETE UPDATE INSERT
+
+Only SELECT queries allowed.
+
+Summarize Results
+
+Explain Errors
+
+Suggest Root Cause
+
+Recommend Fix
+
+Generate Charts Automatically
+
+Auto detect best visualization
+
+Suggest follow-up questions
+
+Example
+
+You asked
+
+Show failed APIs
+
+AI suggests
+
+Would you like
+
+See timeout requests
+
+Export results
+
+See response payload
+
+Find root cause
+
+⸻
+
+Advanced Search Filters
+
+Date
+
+Consumer
+
+API
+
+Status
+
+Response Code
+
+Latency
+
+Server
+
+Environment
+
+Correlation ID
+
+Trace ID
+
+Keyword
+
+⸻
+
+Dark Theme
+
+Professional enterprise theme
+
+Rounded cards
+
+Glass effect
+
+Smooth animations
+
+Responsive
+
+Modern tables
+
+Professional typography
+
+Blue
+
+Purple
+
+White
+
+Grey
+
+No clutter
+
+⸻
+
+Project Structure
+
+Frontend
+
+/components
+
+/pages
+
+/services
+
+/hooks
+
+/context
+
+/layout
+
+/utils
+
+/types
+
+/assets
+
+Backend
+
+controller
+
+service
+
+repository
+
+entity
+
+dto
+
+config
+
+security
+
+exception
+
+AI Service
+
+prompt.py
+
+sql_generator.py
+
+summarizer.py
+
+chart_generator.py
+
+database.py
+
+llm.py
+
+⸻
+
+REST APIs
+
+GET /dashboard
+
+POST /ai/query
+
+GET /transactions
+
+GET /transaction/{id}
+
+GET /analytics
+
+GET /consumers
+
+GET /apis
+
+GET /reports
+
+POST /savedQuery
+
+⸻
+
+Extra Features
+
+Real-time refresh
+
+WebSocket updates
+
+Live transaction stream
+
+AI chat history
+
+Export to Excel
+
+Download JSON
+
+Dark mode
+
+Role-based dashboard
+
+Caching
+
+Swagger
+
+Docker support
+
+Kubernetes deployment files
+
+Unit tests
+
+Integration tests
+
+100% responsive UI
+
+⸻
+
+UI Inspiration
+
+The UI should resemble a combination of:
+
+* ChatGPT (AI conversation experience)
+* Kibana (log analytics)
+* Azure Portal (enterprise dashboard)
+* Splunk (search and log visualization)
+* Datadog (metrics and monitoring)
+
+The final application should be polished, production-ready, and suitable for enterprise use with reusable React components, clean architecture, proper coding standards, and scalable design.
